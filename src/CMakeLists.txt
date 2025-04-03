@@ -16,10 +16,12 @@ target_include_directories(app_components
 )
 
 # Linking with Eigen3
-target_link_libraries(app_components
-    PUBLIC
-        Eigen3::Eigen
-)
+if(USE_EIGEN3)
+    target_link_libraries(app_components
+        PUBLIC
+            Eigen3::Eigen
+    )
+endif()
 
 # Adding the main application executable
 add_executable(cpp-app

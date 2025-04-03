@@ -7,6 +7,11 @@ project(USR_PROJECT_NAME
     LANGUAGES CXX
 )
 
+# Options
+option(BUILD_TESTS "Build the test suite" ON)
+option(USE_EIGEN3 "Use Eigen3 library" ON)
+option(ENABLE_WARNINGS "Enable all warnings" ON)
+
 # Cmake module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -18,11 +23,6 @@ fetch_dependencies()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-# Options
-
-option(BUILD_TESTS "Build the test suite" ON)
-option(ENABLE_WARNINGS "Enable all warnings" ON)
 
 # Warnings
 if(ENABLE_WARNINGS)
