@@ -79,7 +79,7 @@ Alternatively, use the proper IDE Extension according to your platform. For exam
 
 After building the project, execute tests using:
 
-```
+``` console
 ctest --output-on-failure
 ```
 
@@ -103,6 +103,17 @@ project(USR_PROJECT_NAME
     VERSION 1.0.0
     DESCRIPTION "Description of the project"
     LANGUAGES CXX
+)
+```
+
+### Executable name
+
+You can edit the final binary name from the **cpp-app** by editing the following line in the `src/CMakeLists.txt`:
+
+``` cmake
+# Adding the main application executable
+add_executable(cpp-app
+    app/main.cpp
 )
 ```
 
